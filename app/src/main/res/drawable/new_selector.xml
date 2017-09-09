@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- StateListDrawable对应标签selector， -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 每一个item表示一种状态下的view，对应一个具体的drawable，默认item放在最后 -->
     <!-- state_enabled:触摸或点击时间是否可用（false【不可用状态】|true【可用状态】） -->
     <item android:state_enabled="false" android:drawable="@drawable/shape_rectangle"/>
     <!-- state_focused:获取焦点（false【失去焦点】|true【获得焦点】） -->
+
     <item android:state_focused="false" android:drawable="@drawable/shape_oval"/>
-    <!-- state_accelerated: -->
+    <!-- state_accelerated:（false【】|true【】） -->
     <item android:state_accelerated="false"/>
-    <!-- state_activated -->
+
+    <!-- state_activated：（false【】|true【】） -->
     <item android:state_activated="false"/>
-    <!-- state_checkable -->
+
+    <!-- state_checkable：设置勾选是否可用 （false【不可勾选】|true【可以勾选】）-->
     <item android:state_checkable="false"/>
-    <!-- state_checked -->
+
+    <!-- state_checked：被选中 （false【】|true【】）-->
     <item android:state_checked="false"/>
-    <!-- state_drag_can_accept -->
+
+    <!-- state_drag_can_accept（false【】|true【】） -->
     <item android:state_drag_can_accept="false"/>
-    <!-- state_drag_hovered -->
+
+    <!-- state_drag_hovered（false【】|true【】） -->
     <item android:state_drag_hovered="false"/>
-    <!-- state_hovered -->
+
+    <!-- state_hovered（false【】|true【】） -->
     <item android:state_hovered="false"/>
-    <!-- state_pressed -->
+
+    <!-- state_pressed：按下状态（false【】|true【】） -->
     <item android:state_pressed="false"/>
-    <!-- state_first -->
+
+    <!-- state_first（false【】|true【】） -->
     <item android:state_first="false"/>
-    <!--  -->
+    
+    <!-- state_middle（false【】|true【】） -->
     <item android:state_middle="false"/>
-    <!--  -->
+    <!-- state_last（false【】|true【】） -->
     <item android:state_last="false"/>
-    <!--  -->
+    <!-- state_selected（false【】|true【】） -->
     <item android:state_selected="false"/>
-    <!--  -->
+    <!-- state_single（false【】|true【】） -->
     <item android:state_single="false"/>
-    <!--  -->
+    <!-- state_window_focused（false【】|true【】） -->
     <item android:state_window_focused="false"/>
 
 </selector>

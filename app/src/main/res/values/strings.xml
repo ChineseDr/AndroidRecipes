@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidRecipes</string>
+    <string name="action1">Start Service</string>
+    <string name="action2">turn to Second Activity</string>
 </resources>

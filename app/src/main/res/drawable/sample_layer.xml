@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- layer-list图层，每个item表示一个图层，通过top，bottom，left，right设置item相对于整个view的位置 -->
+    <item android:drawable="@drawable/shape_ring"
+        />
+
+</layer-list>
