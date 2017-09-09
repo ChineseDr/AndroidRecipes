@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- state_enabled:触摸或点击时间是否可用（false【不可用状态】|true【可用状态】） -->
+    <item android:state_enabled="false" android:drawable="@drawable/shape_rectangle"/>
+    <!-- state_focused:获取焦点（false【失去焦点】|true【获得焦点】） -->
+    <item android:state_focused="false" android:drawable="@drawable/shape_oval"/>
+    <!-- state_accelerated: -->
+    <item android:state_accelerated="false"/>
+    <!-- state_activated -->
+    <item android:state_activated="false"/>
+    <!-- state_checkable -->
+    <item android:state_checkable="false"/>
+    <!-- state_checked -->
+    <item android:state_checked="false"/>
+    <!-- state_drag_can_accept -->
+    <item android:state_drag_can_accept="false"/>
+    <!-- state_drag_hovered -->
+    <item android:state_drag_hovered="false"/>
+    <!-- state_hovered -->
+    <item android:state_hovered="false"/>
+    <!-- state_pressed -->
+    <item android:state_pressed="false"/>
+    <!-- state_first -->
+    <item android:state_first="false"/>
+    <!--  -->
+    <item android:state_middle="false"/>
+    <!--  -->
+    <item android:state_last="false"/>
+    <!--  -->
+    <item android:state_selected="false"/>
+    <!--  -->
+    <item android:state_single="false"/>
+    <!--  -->
+    <item android:state_window_focused="false"/>
+
+</selector>
