@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.raymond.basedemo.R;
 
-public class FourthActivity extends AppCompatActivity {
+public class FourthActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

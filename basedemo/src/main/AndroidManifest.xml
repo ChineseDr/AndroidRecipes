@@ -17,9 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name="com.baseDemo.activities.FirstActivity" />
-        <activity android:name="com.baseDemo.activities.SecondActivity" />
-        <activity android:name="com.baseDemo.activities.ThirdActivity" />
-        <activity android:name="com.baseDemo.activities.FourthActivity" />
+            <!--android:launchMode="standard"-->
+        <activity android:name="com.baseDemo.activities.SecondActivity"/>
+            <!--android:launchMode="singleTop"-->
+        <activity android:name="com.baseDemo.activities.ThirdActivity"/>
+            <!--android:launchMode="singleTask"-->
+        <activity android:name="com.baseDemo.activities.FourthActivity"/>
+            <!--android:launchMode="singleInstance"-->
 
         <service
             android:name="com.baseDemo.services.MyService"
