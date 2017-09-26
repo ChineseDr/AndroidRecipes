@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.baseDemo.activities.FirstActivity;
+import com.raymond.basedemo.activities.FirstActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Button btn_start;

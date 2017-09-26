@@ -1,4 +1,4 @@
-package com.baseDemo.activities;
+package com.raymond.basedemo.activities;
 
 import android.app.Activity;
 import android.os.Bundle;

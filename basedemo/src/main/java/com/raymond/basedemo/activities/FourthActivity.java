@@ -1,6 +1,5 @@
-package com.baseDemo.activities;
+package com.raymond.basedemo.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.raymond.basedemo.R;

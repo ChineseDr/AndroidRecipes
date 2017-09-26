@@ -16,25 +16,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.baseDemo.activities.FirstActivity" />
-            <!--android:launchMode="standard"-->
-        <activity android:name="com.baseDemo.activities.SecondActivity"/>
-            <!--android:launchMode="singleTop"-->
-        <activity android:name="com.baseDemo.activities.ThirdActivity"/>
-            <!--android:launchMode="singleTask"-->
-        <activity android:name="com.baseDemo.activities.FourthActivity"/>
-            <!--android:launchMode="singleInstance"-->
+        <activity android:name=".activities.FirstActivity" />
+
+        <activity android:name=".activities.SecondActivity"/>
+
+        <activity android:name=".activities.ThirdActivity"/>
+
+        <activity android:name=".activities.FourthActivity"/>
+
 
         <service
-            android:name="com.baseDemo.services.MyService"
+            android:name=".services.MyService"
             android:enabled="true"
             android:exported="true" />
         <service
-            android:name="com.baseDemo.services.MyIntentService"
+            android:name=".services.MyIntentService"
             android:exported="false" />
 
         <receiver
-            android:name="com.baseDemo.receivers.MyReceiver"
+            android:name=".receivers.MyReceiver"
             android:enabled="true"
             android:exported="true"></receiver>
     </application>
