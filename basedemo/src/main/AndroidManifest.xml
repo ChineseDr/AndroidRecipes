@@ -17,13 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.FirstActivity" />
-
-        <activity android:name=".activities.SecondActivity"/>
-
-        <activity android:name=".activities.ThirdActivity"/>
-
-        <activity android:name=".activities.FourthActivity"/>
-
+        <activity android:name=".activities.SecondActivity" />
+        <activity android:name=".activities.ThirdActivity" />
+        <activity android:name=".activities.FourthActivity" />
 
         <service
             android:name=".services.MyService"
@@ -36,7 +32,11 @@
         <receiver
             android:name=".receivers.MyReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+
+        <activity android:name="com.raymond.lonely.SingleActivity">
+
+        </activity>
     </application>
 
 </manifest>
