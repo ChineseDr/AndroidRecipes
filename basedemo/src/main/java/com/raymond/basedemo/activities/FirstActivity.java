@@ -72,10 +72,7 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener{
                 break;
             case R.id.next:
                 Intent intentSecond = new Intent();
-                //ComponentName第一个参数manifest的package属性的值
-                ComponentName cn = new ComponentName("com.raymond.basedemo","com.baseDem.activities.SecondActivity");
-//                Log.d("intentSecond",((Intent)intentSecond).getComponent().toShortString()+" ");
-                intentSecond.setComponent(cn);
+                intentSecond.setClass(FirstActivity.this,SecondActivity.class);
                 startActivity(intentSecond);
                 break;
             default:

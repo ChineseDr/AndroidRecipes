@@ -38,8 +38,8 @@ public class SecondActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.next:
                 Intent intentThird = new Intent();
-                //ComponentName componentName=getComponentName();
-                intentThird.setClassName("com.baseDemo.activities","ThirdActivity");
+                //第一个参数包名，第二个参数要启动的activity的全路径类名
+                intentThird.setClassName("com.raymond.basedemo","com.raymond.basedemo.activities.ThirdActivity");
                 startActivity(intentThird);
         }
     }

@@ -24,9 +24,11 @@
         android:id="@+id/start_other_acti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start different activity"
-        tools:layout_editor_absoluteY="50dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="0dp"
+        android:text="Lonly"
+        app:layout_constraintLeft_toRightOf="@+id/start_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
