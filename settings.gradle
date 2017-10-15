@@ -1,1 +1,1 @@
-include ':app', ':basedemo'
+include ':app', ':basedemo', ':customview'
