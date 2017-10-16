@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--声明属性，format声明属性值的格式-->
     <attr name="titleText" format="string" />
     <attr name="titleTextColor" format="color" />
     <attr name="titleTextSize" format="dimension" />
-
+    
+    <!--声明属性集，既这些属性属于哪个控件-->
     <declare-styleable name="CustomTitleView" >
         <attr name="titleText" />
         <attr name="titleTextColor" />
