@@ -36,6 +36,7 @@ public class CustomTextView extends View {
 
     public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        //TypedArray是工具类，通过context.obtainStyledAttributes把属性注册进去
         TypedArray types = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomTitleView, defStyleAttr, 0);
         int n = types.getIndexCount();
         for (int i = 0; i < n; i++) {
