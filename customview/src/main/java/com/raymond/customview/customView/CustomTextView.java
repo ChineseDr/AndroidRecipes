@@ -2,6 +2,7 @@ package com.raymond.customview.customView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -27,11 +28,11 @@ public class CustomTextView extends View {
     private Paint paint;
 
     public CustomTextView(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public CustomTextView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -59,5 +60,63 @@ public class CustomTextView extends View {
         paint.setTextSize(mTitleTextSize);
         mBound=new Rect();
         paint.getTextBounds(mTitleText,0,mTitleText.length(),mBound);
+    }
+
+    //测量控件大小，
+    //当我们设置明确的宽度和高度时，系统帮我们测量的结果就是我们设置的结果，
+    //系统帮我们测量的高度和宽度都是match_parent，不论我们设置为wrap_content还是match_parent
+    //系统帮测量的结果都是match_parent的长度,因此当我们需要设置控件大小为wrap_content时我们要重写onMeasure
+    //MeasureSpec的specMode,一共三种类型：
+    //EXACTLY：一般是设置了明确的值或者是match_paren
+    //AT_MOST：表示子布局限制在一个最大值内，一般为wrap_content
+    //UNSPECIFIED：表示子布局想要多大就多大
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //获取width的specMode
+        int widthMode=MeasureSpec.getMode(widthMeasureSpec);
+        //获取width的值
+        int widthSize=MeasureSpec.getSize(widthMeasureSpec);
+        //获取height的specMode和值
+        int heightMode=MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize=MeasureSpec.getSize(heightMeasureSpec);
+
+        int width;
+        int height;
+
+        if(widthMode==MeasureSpec.EXACTLY){
+            width=widthSize;
+        }else {
+            paint.setTextSize(mTitleTextSize);
+            paint.getTextBounds(mTitleText,0,mTitleText.length(),mBound);
+            float textWidth=mBound.width();
+            int desired= (int) (getPaddingLeft()+textWidth+getPaddingRight());
+            width=desired;
+        }
+
+        if (heightMode==MeasureSpec.EXACTLY){
+            height=heightSize;
+        }else{
+            paint.setTextSize(mTitleTextSize);
+            paint.getTextBounds(mTitleText,0,mTitleText.length(),mBound);
+            float textHeight=mBound.height();
+            int desired= (int) (getPaddingTop()+textHeight+getPaddingBottom());
+            height=desired;
+        }
+
+        setMeasuredDimension(width,height);
+    }
+
+    //绘制控件
+    @Override
+    protected void onDraw(Canvas canvas) {
+        //super.onDraw(canvas);
+        paint.setColor(0xff0000);
+
+        canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),paint);
+        paint.setColor(mTitleTextColor);
+        canvas.drawText(mTitleText,getWidth()/2-mBound.width()/2,getHeight()/2+mBound.height()/2,paint);
+
     }
 }

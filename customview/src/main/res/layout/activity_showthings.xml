@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+    在布局文件中使用自定义控件必须声明命名空间，声明语句一般放在外层空间属性中
+    xmlns:example="http://schemas.android.com/apk/res/com.example.mytogglebtn"
+    xmlns:是XML name space 的缩写
+    example:是自定义的任意字符，在使用属性需要保持一致
+    http://schemas.android.com/apk/res：固定格式
+    com.example.mytogglebtn：是应用的包名，和manifest配置文件中一致，而不是自定义控件的包，新版本使用res-auto
+    -->
+
+    <com.raymond.customview.customView.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:titleText="1234"
+        custom:titleTextColor="#ff0000"
+        custom:titleTextSize="40sp"
+        android:padding="10dp"
+        android:layout_gravity="center_vertical" />
+
+</LinearLayout>
