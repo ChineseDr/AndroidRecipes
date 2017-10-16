@@ -9,7 +9,7 @@
     在布局文件中使用自定义控件必须声明命名空间，声明语句一般放在外层空间属性中
     xmlns:example="http://schemas.android.com/apk/res/com.example.mytogglebtn"
     xmlns:是XML name space 的缩写
-    example:是自定义的任意字符
+    example:是自定义的任意字符，在使用属性需要保持一致
     http://schemas.android.com/apk/res：固定格式
     com.example.mytogglebtn：应用的包名，和manifest配置文件中一致
     -->
