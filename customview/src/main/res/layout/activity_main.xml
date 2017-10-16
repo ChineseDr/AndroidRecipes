@@ -11,7 +11,7 @@
     xmlns:是XML name space 的缩写
     example:是自定义的任意字符，在使用属性需要保持一致
     http://schemas.android.com/apk/res：固定格式
-    com.example.mytogglebtn：应用的包名，和manifest配置文件中一致
+    com.example.mytogglebtn：是应用的包名，和manifest配置文件中一致，而不是自定义控件的包名
     -->
     <com.raymond.customview.customView.CustomTextView
         android:layout_width="wrap_content"
