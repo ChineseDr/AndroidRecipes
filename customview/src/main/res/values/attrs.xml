@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--声明属性，format声明属性值的格式-->
+    <!--声明属性，format声明属性值的格式
+    所有的format类型
+    reference   引用
+    color       颜色
+    boolean     布尔值
+    dimension   尺寸值
+    float       浮点值
+    integer     整型值
+    string      字符串
+    enum        枚举值
+    -->
     <attr name="titleText" format="string" />
     <attr name="titleTextColor" format="color" />
     <attr name="titleTextSize" format="dimension" />
