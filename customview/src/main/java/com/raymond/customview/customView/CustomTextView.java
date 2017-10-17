@@ -70,13 +70,14 @@ public class CustomTextView extends View {
     //EXACTLY：一般是设置了明确的值或者是match_paren
     //AT_MOST：表示子布局限制在一个最大值内，一般为wrap_content
     //UNSPECIFIED：表示子布局想要多大就多大
-
+    //widthMeasureSpec 和 heightMeasureSpec 是int值，但他不是宽和高，而是由宽（高
+    //和各自对应方向上的测量模式组合的值（测量模式是常量int值
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        //获取width的specMode
+       //取出宽度的测量模式
         int widthMode=MeasureSpec.getMode(widthMeasureSpec);
-        //获取width的值
+        //取出宽度的确切数值
         int widthSize=MeasureSpec.getSize(widthMeasureSpec);
         //获取height的specMode和值
         int heightMode=MeasureSpec.getMode(heightMeasureSpec);
