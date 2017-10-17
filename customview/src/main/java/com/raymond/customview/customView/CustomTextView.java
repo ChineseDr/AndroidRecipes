@@ -71,7 +71,7 @@ public class CustomTextView extends View {
     //AT_MOST：表示子布局限制在一个最大值内，一般为wrap_content
     //UNSPECIFIED：表示子布局想要多大就多大
     //widthMeasureSpec 和 heightMeasureSpec 是int值，但他不是宽和高，而是由宽（高
-    //和各自对应方向上的测量模式组合的值（测量模式是常量int值
+    //和各自对应方向上的测量模式组合的值（测量模式是二进制常量00,01,10
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
