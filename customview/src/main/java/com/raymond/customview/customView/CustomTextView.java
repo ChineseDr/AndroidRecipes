@@ -105,7 +105,8 @@ public class CustomTextView extends View {
             int desired= (int) (getPaddingTop()+textHeight+getPaddingBottom());
             height=desired;
         }
-
+    //如果对View的宽高进行修改了，不要调用 super.onMeasure( widthMeasureSpec, heightMeasureSpec); 
+        //要调用 setMeasuredDimension( widthsize, heightsize); 这个函数。
         setMeasuredDimension(width,height);
     }
 
