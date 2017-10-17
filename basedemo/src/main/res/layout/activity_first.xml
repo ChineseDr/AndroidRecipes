@@ -27,7 +27,7 @@
 
         <EditText
             android:id="@+id/username"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:hint="请输入用户名"/>
     </LinearLayout>
@@ -45,7 +45,7 @@
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             />
     </LinearLayout>
@@ -58,14 +58,14 @@
         android:layout_marginTop="80dp">
 
     <Button
-        android:id="@+id/back"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="注册"
         android:layout_margin="30dp"/>
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="登陆"

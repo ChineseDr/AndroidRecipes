@@ -110,10 +110,12 @@ public class CustomTextView extends View {
         setMeasuredDimension(width,height);
     }
 
-    //绘制控件
+    //绘制控件，canvas:画布(可以理解为系统给我们的一块内存区域，并且提供了一系列对这块区域进行操作的方法API);
+    //paint：画布上笔（颜色，画刷～）
     @Override
     protected void onDraw(Canvas canvas) {
         //super.onDraw(canvas);
+//      设置画笔颜色
         paint.setColor(0xff0000);
 
         canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),paint);

@@ -25,7 +25,7 @@
 
         <EditText
             android:id="@+id/username"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:hint="请输入用户名"/>
     </LinearLayout>
@@ -43,12 +43,13 @@
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             />
     </LinearLayout>
 
     <RadioGroup
+        android:id="@+id/sex_chosse"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="120dp"
@@ -143,14 +144,14 @@
         android:layout_marginTop="20dp">
 
         <Button
-            android:id="@+id/back"
+            android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="重置"
             android:layout_margin="10dp"/>
 
         <Button
-            android:id="@+id/next"
+            android:id="@+id/submmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="提交"

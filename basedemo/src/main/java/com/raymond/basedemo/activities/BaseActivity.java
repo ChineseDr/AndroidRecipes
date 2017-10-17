@@ -15,7 +15,7 @@ public class BaseActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //TAG=getClass().toString();
+        TAG=getClass().toString();
         Log.d(TAG,"onCreate");
     }
 

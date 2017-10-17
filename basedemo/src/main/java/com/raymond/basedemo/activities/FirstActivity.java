@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.raymond.basedemo.R;
 
@@ -16,23 +18,24 @@ import com.raymond.basedemo.R;
  */
 
 public class FirstActivity extends BaseActivity implements View.OnClickListener{
-    private final String TAG = "FirstActivity";
     private TextView content;
-    private Button btn_back,btn_next;
+    private EditText userName,password;
+    private Button register,login;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         init();
-        btn_back.setOnClickListener(this);
-        btn_next.setOnClickListener(this);
+        register.setOnClickListener(this);
+        login.setOnClickListener(this);
     }
 
     private void init(){
         content=findViewById(R.id.tv);
-        btn_back=findViewById(R.id.back);
-        btn_next=findViewById(R.id.next);
+        register=findViewById(R.id.register);
+        login=findViewById(R.id.login);
+        userName=findViewById(R.id.username);
     }
 
     @Override
@@ -68,12 +71,13 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.back:
+            case R.id.register:
+                Intent intentrigister = new Intent();
+                intentrigister.setClass(FirstActivity.this,SecondActivity.class);
+                startActivity(intentrigister);
                 break;
-            case R.id.next:
-                Intent intentSecond = new Intent();
-                intentSecond.setClass(FirstActivity.this,SecondActivity.class);
-                startActivity(intentSecond);
+            case R.id.login:
+                Toast.makeText(this,"userName"+userName.getText().toString(),Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
