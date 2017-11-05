@@ -27,10 +27,12 @@ public class CustomTextView extends View {
     private Rect mBound;
     private Paint paint;
 
+    //此处调了两个参数的构造函数
     public CustomTextView(Context context) {
         this(context,null);
     }
 
+    //调用了三个参数的构造函数，明确指定第三个参数
     public CustomTextView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs,0);
     }
