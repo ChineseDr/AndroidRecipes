@@ -2,6 +2,7 @@ package com.raymond.customview.customView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,8 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.raymond.customview.R;
 
 /**
  * Created by ray on 2017/11/5.
@@ -28,6 +31,7 @@ public class SubTextView extends TextView {
 
     public SubTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
     }
 
     public SubTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
