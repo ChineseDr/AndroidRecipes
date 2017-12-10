@@ -4,6 +4,7 @@ package com.raymond.basedemo.model;
  * Created by ray on 2017/10/24.
  */
 
+
 public class Contact {
     private int portrait;
     private String name,phoneNumber;
