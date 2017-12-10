@@ -31,7 +31,7 @@ public class RightFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //注册订阅者
         EventBus.getDefault().register(this);
     }
 
@@ -49,24 +49,50 @@ public class RightFragment extends Fragment {
     }
 
     /**
-     * 运行中主线程，可以直接操作UI线程
+     * 运行中主线程，可以直接操作UI
      * @param eventMsg
      */
     public void onEventMainThread(EventMsg eventMsg){
         String context=eventMsg.getMsg()+"\n线程Name"+Thread.currentThread().getName()
                 +"线程ID"+Thread.currentThread().getId();
-        Log.i(TAG,"onEvent(EventMsg eventMsg)接收到"+context);
+        Log.i(TAG,"onEventMainThread(EventMsg eventMsg)接收到"+context);
     }
 
     public void onEventMainThread(EventMsg2 eventMsg2){
         String context=eventMsg2.getMsg()+"\n线程Name"+Thread.currentThread().getName()
                 +"线程ID"+Thread.currentThread().getId();
-        Log.i(TAG,"onEvent(EventMsg eventMsg)接收到"+context);
+        Log.i(TAG,"onEventMainThread(EventMsg eventMsg)接收到"+context);
+    }
+
+    /**
+     * 在新的线程中执行，如果事件消息是主线程post出来的
+     * 此方法会开启一个新的线程来处理事件
+     * 适用于多个线程的任务组，内部采用线程池管理
+     * 与发布者无关，总是创建一个新的线程
+     * @param eventMsg
+     */
+    public void onEventAsync(EventMsg eventMsg){
+        String context=eventMsg.getMsg()+"\n线程Name"+Thread.currentThread().getName()
+                +"线程ID"+Thread.currentThread().getId();
+        Log.i(TAG,"onEventAsync(EventMsg eventMsg)接收到"+context);
+    }
+
+    /**
+     * 在子线程中执行
+     * 如果是发布者在子线程中，直接执行
+     * 如果不在子线程中，则创建一个新的线程来执行处理
+     * @param eventMsg
+     */
+    public void onEventBackgroundThread(EventMsg eventMsg){
+        String context=eventMsg.getMsg()+"\n线程Name"+Thread.currentThread().getName()
+                +"线程ID"+Thread.currentThread().getId();
+        Log.i(TAG,"onEventBackgroundThread(EventMsg eventMsg)接收到"+context);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        //注销订阅者
         EventBus.getDefault().unregister(this);
     }
 }
