@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/basedemo/basedemo.iml" filepath="$PROJECT_DIR$/basedemo/basedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
       <module fileurl="file://$PROJECT_DIR$/eventbusl/eventbusl.iml" filepath="$PROJECT_DIR$/eventbusl/eventbusl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxjavalearn/rxjavalearn.iml" filepath="$PROJECT_DIR$/rxjavalearn/rxjavalearn.iml" />
     </modules>
   </component>
 </project>
