@@ -2,10 +2,13 @@ package com.rxjavalearn;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initRxJava();
     }
 
     private void initRxJava(){
@@ -30,13 +34,51 @@ public class MainActivity extends AppCompatActivity {
             // c.备注：发送时间前检查观察者的isUNsubscribe状态，以便没有观察者的时间，让Observable停止发射数据
             @Override
             public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+//                if (){
+                    e.onNext(1);
+                    e.onNext(2);
+                    e.onNext(3);
+//                }
                 e.onComplete();
             }
         });
         /// 被观察者创建完成
 
         // 二、链式调用创建观察者
-        // 通过create创建
+        // 通过create创建被观察者对象
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            //在重写的subscribe方法里定义需要发送的时间
+            @Override
+            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                e.onNext(1);
+                e.onNext(2);
+                e.onNext(3);
+
+                e.onComplete();
+            }//一个被观察者创建完成
+        }).subscribe(new Observer<Integer>() {
+            //通过订阅连接被观察者和观察者 & 创建观察者 & 定义相应事件的行为
+            //默认最先调用重写的onSubscribe
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d("TAG","开始subscribe连接");
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.d("TAG","接收到事件"+integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.d("TAG","对Error事件做出响应");
+            }
+
+            @Override
+            public void onComplete() {
+                Log.d("TAG","对Complete事件做出响应");
+            }
+        });
 
 
         /******************************************************************************/
