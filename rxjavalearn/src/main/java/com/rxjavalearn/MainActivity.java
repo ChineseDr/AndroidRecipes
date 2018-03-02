@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -11,6 +14,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String TAG="MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +84,115 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
-        /******************************************************************************/
+    /**
+     * 快速创建 & 发送事件
+     */
+    public void quickCreate(){
+        //一、just()
+        //a.作用：快速创建一个被观察者对象（Observable） &
+        //  发送事件特点：直接发送传入的事件，可以发送10条以下事件
 
-        //创建
+        //b.具体使用
+        //  1.创建时传入泛型（整型1，2,3,4）在创建后发送这些对象，相当于onNext()
+        Observable.just(1,2,3,4)
+                //至此被观察者对象Observable创建完成
+                //2.通过订阅（subscribe）连接被观察者和观察者
+                //创建观察者 & 定义响应事件的行为
+                .subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+
+        //二、fromArray()
+        //a.作用：快速创建一个被观察者对象（Observable）
+        // 发送事件特点：发送传入的数组数据（以数组形式发送10个以上事件）
+
+        //b.具体使用
+        //  1.设置需要传入的数组
+        Integer[] items={1,2,3,4,5};
+
+        Observable.fromArray(items).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+
+        //二、fromIterable
+        //a.作用快速创建一个Observable对象
+        // 发送事件特点：直接发送传入的集合List数据（以集合形式发送10个以上事件）
+
+        //2.具体使用
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        Observable.fromArray(list).subscribe(new Observer<List<Integer>>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(List<Integer> integers) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+    }
+
+
+    /**
+     * 延迟创建
+     */
+    public void delayCreate(){
+
     }
 }
