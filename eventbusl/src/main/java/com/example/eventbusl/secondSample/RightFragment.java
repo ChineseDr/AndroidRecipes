@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.eventbusl.R;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * Created by ray on 2017/12/10.
@@ -58,6 +59,7 @@ public class RightFragment extends Fragment {
         Log.i(TAG,"onEventMainThread(EventMsg eventMsg)接收到"+context);
     }
 
+    @Subscribe
     public void onEventMainThread(EventMsg2 eventMsg2){
         String context=eventMsg2.getMsg()+"\n线程Name"+Thread.currentThread().getName()
                 +"线程ID"+Thread.currentThread().getId();
@@ -71,6 +73,7 @@ public class RightFragment extends Fragment {
      * 与发布者无关，总是创建一个新的线程
      * @param eventMsg
      */
+    @Subscribe
     public void onEventAsync(EventMsg eventMsg){
         String context=eventMsg.getMsg()+"\n线程Name"+Thread.currentThread().getName()
                 +"线程ID"+Thread.currentThread().getId();
@@ -83,6 +86,7 @@ public class RightFragment extends Fragment {
      * 如果不在子线程中，则创建一个新的线程来执行处理
      * @param eventMsg
      */
+    @Subscribe
     public void onEventBackgroundThread(EventMsg eventMsg){
         String context=eventMsg.getMsg()+"\n线程Name"+Thread.currentThread().getName()
                 +"线程ID"+Thread.currentThread().getId();

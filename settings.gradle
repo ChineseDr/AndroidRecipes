@@ -1,1 +1,2 @@
-include ':app', ':basedemo', ':customview', ':animations', ':eventbusl', ':rxjavalearn'
+include ':app', ':basedemo', ':customview', ':animations', ':eventbusl', ':rxjavalearn',':volleysample', ':okhttpsample', ':recyclerviewsample', ':aidlbase', ':aidlserver', ':aidlclient'
+

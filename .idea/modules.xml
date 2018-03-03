@@ -3,12 +3,18 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidRecipes.iml" filepath="$PROJECT_DIR$/AndroidRecipes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidlbase/aidlbase.iml" filepath="$PROJECT_DIR$/aidlbase/aidlbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidlserver/aidlserver.iml" filepath="$PROJECT_DIR$/aidlserver/aidlserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/animations/animations.iml" filepath="$PROJECT_DIR$/animations/animations.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/basedemo/basedemo.iml" filepath="$PROJECT_DIR$/basedemo/basedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
       <module fileurl="file://$PROJECT_DIR$/eventbusl/eventbusl.iml" filepath="$PROJECT_DIR$/eventbusl/eventbusl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttpsample/okhttpsample.iml" filepath="$PROJECT_DIR$/okhttpsample/okhttpsample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerviewsample/recyclerviewsample.iml" filepath="$PROJECT_DIR$/recyclerviewsample/recyclerviewsample.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjavalearn/rxjavalearn.iml" filepath="$PROJECT_DIR$/rxjavalearn/rxjavalearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volleysample/volleysample.iml" filepath="$PROJECT_DIR$/volleysample/volleysample.iml" />
     </modules>
   </component>
 </project>
