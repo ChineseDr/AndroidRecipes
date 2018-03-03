@@ -7,6 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -231,11 +232,38 @@ public class MainActivity extends AppCompatActivity {
         observable.subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                Log.d(TAG,"通过subscribe（订阅）事件");
+                Log.d(TAG,"通过subscribe（订阅）连接观察者和被观察者");
             }
 
             @Override
             public void onNext(Integer value) {
+                Log.d(TAG,"响应事件");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+        //二、timer()
+        //a.作用：快速创建一个被观察者，延迟指定时间后发送一个数值0
+        //b.使用场景：检测
+
+        //c.使用：
+        Observable.timer(2, TimeUnit.SECONDS).subscribe(new Observer<Long>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Long aLong) {
 
             }
 
@@ -249,6 +277,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        //三、interval()
+        //a.作用：
+        //b.
+        //c.
 
 
     }
