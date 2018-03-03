@@ -6,15 +6,18 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG="MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 快速创建 & 发送事件
+     * 1.just()
+     * 2.fromArray()
+     * 3.fromIterable
      */
     public void quickCreate(){
         //一、just()
@@ -154,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //二、fromIterable
+        //三、fromIterable
         //a.作用快速创建一个Observable对象
         // 发送事件特点：直接发送传入的集合List数据（以集合形式发送10个以上事件）
 
@@ -191,8 +197,59 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 延迟创建
+     * 1.defer()
+     * 2.timer()
+     * 3.interval()
+     * 4.intervalRange
+     * 5.range()
+     * 6.rangeLong()
      */
+    Integer i=1;
     public void delayCreate(){
+
+        //一、defer()
+        //a.作用：直到有观察者被创建时才动态的创建被观察者和发送事件，
+        //  1.通过Observable工厂方法创建被观察者对象，
+        //  2.每次订阅后都会获得一个刚创建的最新的Observable对象，可以确保Observable对象中的数据是最新的
+        //b.使用场景：动态创建被观察者对象 & 获取最新数据
+
+        //c.具体实现
+        i=10;//第一次为i赋值
+        //1.通过defer()定义被观察者对象Observable，注：此时被观察者还未被创建
+        Observable<Integer> observable=Observable.defer(new Callable<ObservableSource<? extends Integer>>() {
+            @Override
+            public ObservableSource<? extends Integer> call() throws Exception {
+                return Observable.just(i);//匿名内部类访问外部类的局部变量必须时final的，
+                // 内部类回调外部类方法时，局部变量可能已经改变，内部类是copy了变量到内部类，
+                // 为了防止外部类修改变量的值，导致外部类和内部类的值不一致，所以声明为final
+            }
+        });
+
+        i=15;
+        //观察者开始订阅
+        //此时调用defer创建被观察者对象
+        observable.subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d(TAG,"通过subscribe（订阅）事件");
+            }
+
+            @Override
+            public void onNext(Integer value) {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
 
     }
 }
