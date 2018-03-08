@@ -94,7 +94,10 @@ public class MainActivity extends AppCompatActivity {
      * 快速创建 & 发送事件
      * 1.just()
      * 2.fromArray()
-     * 3.fromIterable
+     * 3.fromIterable()
+     * 4.never()
+     * 5.empty()
+     * 6.error()
      */
     public void quickCreate(){
         //一、just()
@@ -280,10 +283,72 @@ public class MainActivity extends AppCompatActivity {
 
 
         //三、interval()
-        //a.作用：
+        //a.作用：快速创建一个被观察者对象
+        //b.发送事件特点：每隔指定时间发送事件（发送事件序列：从0开始每次+1无限递增）
+
+        //c.具体实现
+        //参数说明：第一个：第一次延迟时间，第二个：间隔时间的数字，第三个：间隔时间的单位（分，秒……等）
+        //本例：延迟3秒后发送第一个事件，之后每秒产生一个数字（从0开始）
+        Observable.interval(3,1,TimeUnit.SECONDS)
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });//延迟3秒后发送第一个事件，之后每秒产生一个数字（从0开始）
+
+
+        //四、intervalRange()
+        //a.作用：类似interval(),
+        //b.发送事件特点：类似interval，但是可以指定发送事件的数量
+
+        //c.具体实现
+        //参数说明：
+        Observable.intervalRange()
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+        //五、range()
+        //a.快速创建
         //b.
         //c.
-
-
+        //六、rangeLong()
+        //a.
+        //b.
+        //c.
     }
 }
