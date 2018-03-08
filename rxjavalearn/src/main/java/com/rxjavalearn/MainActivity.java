@@ -343,9 +343,35 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         //五、range()
-        //a.快速创建
-        //b.
-        //c.
+        //a.快速创建一个Observable对象
+        //b.发送事件特点：连续发送1个事件序列，可以发送事件数量，
+
+        //c.具体实现：
+        //参数说明:第一个参数：事件起始点；第二个参数：事件数量
+        Observable.range(3,10)//从3开始每次递增1，一共发送10个事件
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
         //六、rangeLong()
         //a.
         //b.
